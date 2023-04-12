@@ -205,47 +205,27 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         case KC_PRVWD:
             if (record->event.pressed) {
-                register_mods(mod_config(MOD_LALT));
-                register_code(KC_LEFT);
-            } else {
-                unregister_mods(mod_config(MOD_LALT));
-                unregister_code(KC_LEFT);
+                tap_code16(A(KC_LEFT));
             }
             break;
         case KC_NXTWD:
              if (record->event.pressed) {
-                register_mods(mod_config(MOD_LALT));
-                register_code(KC_RIGHT);
-            } else {
-                unregister_mods(mod_config(MOD_LALT));
-                unregister_code(KC_RIGHT);
+                tap_code16(A(KC_RIGHT));
             }
             break;
         case KC_LSTRT:
             if (record->event.pressed) {
-                register_mods(mod_config(MOD_LGUI));
-                register_code(KC_LEFT);
-            } else {
-                unregister_mods(mod_config(MOD_LGUI));
-                unregister_code(KC_LEFT);
+                tap_code16(G(KC_LEFT));
             }
             break;
         case KC_LEND:
             if (record->event.pressed) {
-                register_mods(mod_config(MOD_LGUI));
-                register_code(KC_RIGHT);
-            } else {
-                unregister_mods(mod_config(MOD_LGUI));
-                unregister_code(KC_RIGHT);
+                tap_code16(G(KC_RIGHT));
             }
             break;
         case KC_DLINE:
             if (record->event.pressed) {
-                register_mods(mod_config(MOD_LGUI));
-                register_code(KC_BSPC);
-            } else {
-                unregister_mods(mod_config(MOD_LGUI));
-                unregister_code(KC_BSPC);
+                SEND_STRING(SS_LCTL("e") SS_LGUI(SS_TAP(X_BSPC)) SS_TAP(X_BSPC));
             }
             break;
     }
