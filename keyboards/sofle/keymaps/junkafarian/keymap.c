@@ -76,23 +76,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 /* NAV
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * |      | BrUp | BrDn |      |      |      |                    |      | PrTr | Play | NxTr |      |      |
+ * |      | BrUp | BrDn |      |      |      |                    |      | PrTr | Play | NxTr |PrTab |NxTab |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      | Menu |      | Caps |                    | PGUP | PWrd |  Up  | NWrd | DLine| Bspc |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------.    ,-------| PGDN | Left | Down | Right|  Del | Bspc |
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
- * |      |TabWin|      |      |PstSp |      |-------|    |-------|      | LStrt|      | LEnd |      |      |
+ * |      |TabWin|      |      |PstSp |      |-------|    |-------|TabWin| LStrt|      | LEnd |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            |      |      |      |      | /       /       \      \  |      |      |      |      |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `-----------------------------------'           '------''---------------------------'
  */
 [_NAV] = LAYOUT(
-  _______, KC_BRID, KC_BRIU , _______ , _______ , _______,                       _______,  KC_MPRV, KC_MPLY,  KC_MNXT,  _______ ,_______,
+  _______, KC_BRID, KC_BRIU , _______ , _______ , _______,                       _______,  KC_MPRV, KC_MPLY,  KC_MNXT, G(KC_LCBR), G(KC_RCBR),
   _______, _______,  _______,   KC_APP,  XXXXXXX, KC_CAPS,                       KC_PGUP, KC_PRVWD,   KC_UP, KC_NXTWD,KC_DLINE, KC_BSPC,
   _______, XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX,                       KC_PGDN,  KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL, KC_BSPC,
-  _______, G(KC_GRV), XXXXXXX, XXXXXXX, S(A(G(KC_V))), XXXXXXX,  _______,    _______,  XXXXXXX, KC_LSTRT, XXXXXXX, KC_LEND, XXXXXXX, _______,
+  _______, G(KC_GRV), XXXXXXX, XXXXXXX, S(A(G(KC_V))), XXXXXXX,  _______,    _______,  G(KC_GRV), KC_LSTRT, XXXXXXX, KC_LEND, XXXXXXX, _______,
                      _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
 ),
 /* ADJUST
